@@ -1,0 +1,3 @@
+hexdump a.out -C | less
+objdump -s a.out | less
+objdump -DS ./a.out | less -p .text

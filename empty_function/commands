@@ -1,0 +1,3 @@
+gcc -c -S -O3 main.c
+
+-c doesn't link, no need to have main()
