@@ -1,0 +1,10 @@
+# Accessing passed arguments
+gcc -S -O3 main.c -masm=intel
+
+main push 3 numbers onto the stack
+
+32-bit int => e-register
+64-bit int => r-register (with uint64_t)
+
+# Return value
+in eax register
