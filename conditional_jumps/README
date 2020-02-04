@@ -1,0 +1,21 @@
+#diff signed/unsigned jump condition
+These instructions (JA/JAE/JB/JBE) differ from JG/JGE/JL/JLE in the fact that
+they work with unsigned numbers.
+
+# Replace jmp by nop
+create .o file: 
+    gcc -g -c main.c 
+find line to change
+    objdump -d -M intel -S main.o | less
+change binary code
+    vi main.o
+    :%!xxd
+    //replace 7e0c by 9090 where 90=nop
+    :%!xxd -r > new.o
+verify: 
+    objdump -d -M intel -S new.o | less
+compile:
+    gcc -o exec new.o
+launch
+    ./exec
+lol
