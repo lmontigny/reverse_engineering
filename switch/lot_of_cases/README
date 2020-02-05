@@ -1,0 +1,15 @@
+jumptable or branch table
+.L4:
+	.long	.L8-.L4
+	.long	.L7-.L4
+	.long	.L6-.L4
+	.long	.L5-.L4
+	.long	.L3-.L4
+	.text
+
+spacing of 4B between element of L4.
+if bigger than 4, outside boundary -> jmp to message out
+otherwise mul by 4bytes to find the address in the branch table and jmp
+
+!fallthrough!
+forgotten break and several block will be executed
