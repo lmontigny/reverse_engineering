@@ -1,0 +1,13 @@
+gcc -Os
+optimize for size
+
+asm:
+RDI = destination address
+RSI = source address
+RDX = size of block
+
+2 mov instructions
+load byte from addr
+store byte to new addr
+
++note: for loop, check at the beginning
