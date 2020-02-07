@@ -1,0 +1,47 @@
+FWAIT=wait ins. until FPU done, waiting state
+FPU=stack with 8*80-bit registers
+        each reg can hold IEEE 754
+
+
+# System V AMD64 ABI
+The first six integer or pointer arguments are passed in registers RDI, RSI,
+RDX, RCX, R8, R9 (R10 is used as a static chain pointer in case of nested
+functions[22]:21), while XMM0, XMM1, XMM2, XMM3, XMM4, XMM5, XMM6 and XMM7 are
+used for the first floating point arguments.
+
+addional arg=stack
+int return value=rax
+fp return value=xmm0, xmm1
+
+# GDB
+to see xmm registers
+info registers sse
+i r s
+
+
+# GDB fpu registers
+i r f
+
+(gdb) i r f
+st0            0                   (raw 0x00000000000000000000)
+st1            0                   (raw 0x00000000000000000000)
+st2            0                   (raw 0x00000000000000000000)
+st3            0                   (raw 0x00000000000000000000)
+st4            0                   (raw 0x00000000000000000000)
+st5            0                   (raw 0x00000000000000000000)
+st6            0                   (raw 0x00000000000000000000)
+st7            0                   (raw 0x00000000000000000000)
+fctrl          0x37f               895
+fstat          0x0                 0
+ftag           0xffff              65535
+fiseg          0x0                 0
+fioff          0x0                 0
+foseg          0x0                 0
+fooff          0x0                 0
+fop            0x0                 0
+
+# x87
+x87 is a floating-point-related subset of the x86 architecture instruction set. 
+ form an 8-level deep non-strict stack structure ranging from ST(0) to ST(7)
+
+gcc -O0 main.c -masm=intel  -fno-asynchronous-unwind-tables -g -mfpmath=387 -S
