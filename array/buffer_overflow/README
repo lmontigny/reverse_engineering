@@ -1,0 +1,6 @@
+# buffer overflow
+overruns the buffer's boundary and overwrites adjacent memory locations.
+
+# protection solution
+ASLR: address space layout randomization
+"canary" check with gs (segment register) points to TLS (thread local storage)
