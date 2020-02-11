@@ -1,0 +1,5 @@
+TEST is basically the same instruction as AND, but without saving the result 
+(recall the fact CMP is merely the same as SUB, but without saving the result
+
+The OR instruction sets one bit into a register while ignoring other 1 bits.
+AND resets one bit.
