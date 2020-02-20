@@ -2,7 +2,9 @@
 
 # Intro
 qsort(), atexit() from the standard C library;
+
 \*NIX OS signals.
+
 thread starting: CreateThread() (win32), pthread_create() (POSIX);
 
 # Example
@@ -15,4 +17,5 @@ inside qsort() lib, control is passed to this addr.
 
 # Warning
 functin take void pointer
+
 easy to mix up two different function with different type
