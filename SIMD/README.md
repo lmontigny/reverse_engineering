@@ -1,14 +1,14 @@
 # SIMD
 
 # Intro
-each MMX=hold 1x64bit, 8 registers, mm0-mm7
-SSE=extension to 128b, xmm registers
-AVX=extension to 256b
+each MMX=hold 1x64bit, 8 registers, mm0-mm7  
+SSE=extension to 128b, xmm registers  
+AVX=extension to 256b  
 
 # Addition
 Note the XMMWORD
 
-movdqu=mov unaligned double quadword (load 16B)
+movdqu=mov unaligned double quadword (load 16B)  
 PADDD (Add Packed Integers)—adds 4 pairs of 32-bit numbers
 
 ```
